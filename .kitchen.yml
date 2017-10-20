@@ -1,6 +1,9 @@
 ---
 driver:
   name: vagrant
+  customize:
+      natdnsproxy1: "on"
+
 
 provisioner:
   name: chef_zero
