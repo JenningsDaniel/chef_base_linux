@@ -11,3 +11,13 @@ describe file('/home/vagrant/.inputrc') do
     its('owner') { should eq 'vagrant'}
     its('group') { should eq 'vagrant'}
 end
+
+describe package('git') do
+    it { should be_installed }
+end
+
+describe package('vim') do
+    it { should be_installed }
+    its('version') { should cmp >= '2:7' }
+end
+
