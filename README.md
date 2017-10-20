@@ -1,4 +1,7 @@
 # chef_base_linux
 
-TODO: Enter the cookbook description here.
+## Purpose
 
+Applies common linux packages and configuration
+
+* .inputrc - Vi command line edit and bash configuration

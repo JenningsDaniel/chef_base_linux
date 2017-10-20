@@ -1,9 +1,9 @@
 name 'chef_base_linux'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Daniel Jennings'
+maintainer_email 'daniel.j.jennings@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures chef_base_linux'
-long_description 'Installs/Configures chef_base_linux'
+long_description 'Applies common linux packages and configuration'
 version '0.1.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
