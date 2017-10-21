@@ -49,3 +49,5 @@ pathogen_plugin 'vim-sensible' do
     github_org 'tpope'
     users [node['chef_base_linux']['owner']]
 end
+
+include_recipe 'chef_base_linux::tmux'
