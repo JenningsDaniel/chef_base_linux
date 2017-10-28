@@ -27,6 +27,8 @@ describe file('/home/vagrant/.vimrc') do
     its('owner') { should eq 'vagrant'}
     its('group') { should eq 'vagrant'}
     its('content') { should match /set guifont=Hack:h9/ }
+    its('content') { should match /set background=light/ }
+    its('content') { should match /colorscheme solarized/ }
 end
 
 describe directory('/home/vagrant/.vim') do

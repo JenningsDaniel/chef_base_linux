@@ -1,8 +1,8 @@
 execute pathogen#infect()
 
 if has('gui_running')
-    set background=light
-    colorscheme solarized 
+    set background=<%= @background %>
+    colorscheme <%= @color_scheme %>
     set guioptions-=T
     set guifont=<%= @gui_font %>
 endif

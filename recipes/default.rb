@@ -22,7 +22,9 @@ template "#{node['chef_base_linux']['home']}/.vimrc" do
     group node['chef_base_linux']['group']
     mode  '0664'
     variables(
-        :gui_font => node['chef_base_linux']['vim']['gui_font']
+        :gui_font => node['chef_base_linux']['vim']['gui_font'],
+        :background => node['chef_base_linux']['vim']['background'],
+        :color_scheme => node['chef_base_linux']['vim']['color_scheme']
     )
 end
 

@@ -9,6 +9,7 @@ describe file('/home/vagrant/.tmux.conf') do
     its('mode') { should cmp '0664' }
     its('owner') { should eq 'vagrant'}
     its('group') { should eq 'vagrant'}
+    its('content') { should match /colors-solarized 'dark'/ }
 end
 
 describe file('/home/vagrant/.tmux') do
