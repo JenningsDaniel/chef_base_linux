@@ -30,9 +30,34 @@ pathogen_base 'install pathogen!' do
     users [node['chef_base_linux']['owner']]
 end
 
+directory "#{node['chef_base_linux']['home']}/.vim" do
+    owner node['chef_base_linux']['owner']
+    group node['chef_base_linux']['group']
+end
+
+directory "#{node['chef_base_linux']['home']}/.vim/autoload" do
+    owner node['chef_base_linux']['owner']
+    group node['chef_base_linux']['group']
+end
+
+directory "#{node['chef_base_linux']['home']}/.vim/bundle" do
+    owner node['chef_base_linux']['owner']
+    group node['chef_base_linux']['group']
+end
+
+file "#{node['chef_base_linux']['home']}/.vim/autoload/pathogen.vim" do
+    owner node['chef_base_linux']['owner']
+    group node['chef_base_linux']['group']
+end
+
 pathogen_plugin 'ctrlp.vim' do
     github_org 'kien'
     users [node['chef_base_linux']['owner']]
+end
+
+directory "#{node['chef_base_linux']['home']}/.vim/bundle/ctrlp.vim" do
+    owner node['chef_base_linux']['owner']
+    group node['chef_base_linux']['group']
 end
 
 pathogen_plugin 'nerdtree' do
@@ -40,14 +65,29 @@ pathogen_plugin 'nerdtree' do
     users [node['chef_base_linux']['owner']]
 end
 
+directory "#{node['chef_base_linux']['home']}/.vim/bundle/nerdtree" do
+    owner node['chef_base_linux']['owner']
+    group node['chef_base_linux']['group']
+end
+
 pathogen_plugin 'vim-surround' do
     github_org 'tpope'
     users [node['chef_base_linux']['owner']]
 end
 
+directory "#{node['chef_base_linux']['home']}/.vim/bundle/vim-surround" do
+    owner node['chef_base_linux']['owner']
+    group node['chef_base_linux']['group']
+end
+
 pathogen_plugin 'vim-sensible' do
     github_org 'tpope'
     users [node['chef_base_linux']['owner']]
+end
+
+directory "#{node['chef_base_linux']['home']}/.vim/bundle/vim-sensible" do
+    owner node['chef_base_linux']['owner']
+    group node['chef_base_linux']['group']
 end
 
 include_recipe 'chef_base_linux::tmux'
