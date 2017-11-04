@@ -10,3 +10,5 @@ Applies common linux packages and configuration
 * Installs Pathogen plugin manager and plugins
 * Installs Tmux and configures 
 * Installs tmp Tmux plugin manager and plugins
+
+## CI
