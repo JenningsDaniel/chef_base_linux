@@ -1,13 +1,9 @@
-#!/user/bin/env rake
+task default: %w[kitchen]
 
-namespace :integration do
-    begin
-        require 'kitchen/rake_tasks'
-        desc 'Run kitchen integration tests'
-        Kitchen::RakeTasks.new
-    rescue LoadError, StandardError => e
-        puts "Error running kitchen test"
-    end
+require 'kitchen/rake_tasks'
+
+task :kitchen do
+    desc 'Run kitchen integration tests'
+    Kitchen::RakeTasks.new
 end
 
-task default: integration
