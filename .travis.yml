@@ -1,0 +1,18 @@
+# Example setup from http://www.hurryupandwait.io/blog/run-kitchen-tests-in-travis-and-appveyor-using-the-kitchen-machine-driver
+
+language: ruby
+env:
+    global:
+        - machine_user=travis
+        - machine_pwd=travis
+        - machine_port=22
+        - KITCHEN_YAML=.kitchen.travis.yml
+
+sudo: required 
+
+before_install:
+    - sudo usermod -p "`openssl passwd -1 'travis'`" travis
+
+script:
+    - bundle exec rake
+    - bundle exec kitchen verify
