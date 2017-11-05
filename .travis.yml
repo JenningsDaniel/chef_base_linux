@@ -10,6 +10,13 @@ env:
 
 sudo: required 
 
+addons:
+        apt:
+            sources:
+                - chef-stable-precise
+            packages:
+                - chefdk
+
 before_install:
     - sudo usermod -p "`openssl passwd -1 'travis'`" travis
 
