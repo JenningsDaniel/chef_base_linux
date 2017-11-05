@@ -1,5 +1,3 @@
-task default: %w[kitchen]
-
 require 'kitchen/rake_tasks'
 
 task :kitchen do
@@ -7,3 +5,4 @@ task :kitchen do
     Kitchen::RakeTasks.new
 end
 
+task default: %w[kitchen]
