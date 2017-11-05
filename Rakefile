@@ -10,3 +10,4 @@ namespace :integration do
     end
 end
 
+task default: integration
