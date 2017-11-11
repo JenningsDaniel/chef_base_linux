@@ -8,7 +8,7 @@
 describe file('/home/vagrant/.inputrc') do
     it { should exist }
     its('mode') { should cmp '0664' }
-    its('owner') { should eq 'vagrant'}
+    its('owner') { should eq 'vagran'}
     its('group') { should eq 'vagrant'}
 end
 
