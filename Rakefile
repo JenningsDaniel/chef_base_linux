@@ -1,34 +1,5 @@
 #!/usr/bin/env rake
 
-# Style tests. cookstyle (rubocop) and Foodcritic
-namespace :style do
-  begin
-    require 'cookstyle'
-    require 'rubocop/rake_task'
-
-    desc 'Run Ruby style checks'
-    RuboCop::RakeTask.new(:ruby)
-  rescue LoadError => e
-    puts ">>> Gem load error: #{e}, omitting #{task.name}" unless ENV['CI']
-  end
-
-  begin
-    require 'foodcritic'
-
-    desc 'Run Chef style checks'
-    FoodCritic::Rake::LintTask.new(:chef) do |t|
-      t.options = {
-        fail_tags: ['any'],
-      }
-    end
-  rescue LoadError => e
-    puts ">>> Gem load error: #{e}, omitting #{task.name}" unless ENV['CI']
-  end
-end
-
-desc 'Run all style checks'
-task style: ['style:chef', 'style:ruby']
-
 # ChefSpec
 begin
   require 'rspec/core/rake_task'
@@ -61,4 +32,4 @@ namespace :maintain do
 end
 
 # default
-task default: %w(style spec)
+task default: %w(spec)
