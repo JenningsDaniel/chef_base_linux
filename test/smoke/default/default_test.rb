@@ -90,3 +90,24 @@ describe file('/home/vagrant/.vim/bundle/vim-sensible') do
   its('owner') { should eq 'vagrant' }
   its('group') { should eq 'vagrant' }
 end
+
+describe directory('/home/vagrant/.vim/after') do
+  it { should exist }
+  its('mode') { should cmp '0755' }
+  its('owner') { should eq 'vagrant' }
+  its('group') { should eq 'vagrant' }
+end
+
+describe directory('/home/vagrant/.vim/after/ftplugin') do
+  it { should exist }
+  its('mode') { should cmp '0755' }
+  its('owner') { should eq 'vagrant' }
+  its('group') { should eq 'vagrant' }
+end
+
+describe file('/home/vagrant/.vim/after/ftplugin/ruby.vim') do
+  it { should exist }
+  its('mode') { should cmp '0664' }
+  its('owner') { should eq 'vagrant' }
+  its('group') { should eq 'vagrant' }
+end

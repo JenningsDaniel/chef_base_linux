@@ -4,7 +4,7 @@ maintainer_email 'daniel.j.jennings@gmail.com'
 license 'Apache-2.0'
 description 'Applies common linux packages and configuration'
 long_description 'Applies common linux packages and configuration'
-version '1.0.0'
+version '1.0.1'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 depends 'vim'
 depends 'git'

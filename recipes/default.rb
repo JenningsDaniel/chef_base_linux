@@ -90,4 +90,21 @@ directory "#{node['chef_base_linux']['home']}/.vim/bundle/vim-sensible" do
   group node['chef_base_linux']['group']
 end
 
+directory "#{node['chef_base_linux']['home']}/.vim/after" do
+  owner node['chef_base_linux']['owner']
+  group node['chef_base_linux']['group']
+end
+
+directory "#{node['chef_base_linux']['home']}/.vim/after/ftplugin" do
+  owner node['chef_base_linux']['owner']
+  group node['chef_base_linux']['group']
+end
+
+template "#{node['chef_base_linux']['home']}/.vim/after/ftplugin/ruby.vim" do
+  source 'ruby.vim.erb'
+  owner node['chef_base_linux']['owner']
+  group node['chef_base_linux']['group']
+  mode  '0664'
+end
+
 include_recipe 'chef_base_linux::tmux'
