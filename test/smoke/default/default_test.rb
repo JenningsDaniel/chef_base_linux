@@ -91,6 +91,14 @@ describe file('/home/vagrant/.vim/bundle/vim-sensible') do
   its('group') { should eq 'vagrant' }
 end
 
+describe file('/home/vagrant/.vim/bundle/vim-colors-solarized') do
+  it { should exist }
+  it { should be_directory }
+  its('mode') { should cmp '0755' }
+  its('owner') { should eq 'vagrant' }
+  its('group') { should eq 'vagrant' }
+end
+
 describe directory('/home/vagrant/.vim/after') do
   it { should exist }
   its('mode') { should cmp '0755' }

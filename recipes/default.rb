@@ -90,6 +90,13 @@ directory "#{node['chef_base_linux']['home']}/.vim/bundle/vim-sensible" do
   group node['chef_base_linux']['group']
 end
 
+git "#{node['chef_base_linux']['home']}/.vim/bundle/vim-colors-solarized" do
+  repository 'git://github.com/altercation/vim-colors-solarized.git'
+  action :checkout
+  user node['chef_base_linux']['owner']
+  group node['chef_base_linux']['group']
+end
+
 directory "#{node['chef_base_linux']['home']}/.vim/after" do
   owner node['chef_base_linux']['owner']
   group node['chef_base_linux']['group']
