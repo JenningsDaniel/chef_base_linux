@@ -22,7 +22,7 @@ task :deploy do
   if lv > sv
     puts "Uploading version #{lv}."
     sh 'knife cookbook upload chef_base_linux'
-    puts "Done."
+    puts 'Done.'
   else
     puts "Server version #{sv} is newer or same as local version #{lv}."
   end
@@ -30,27 +30,27 @@ end
 
 def server_version
   require 'Open3'
-  stdout_str, status = Open3.capture2('knife cookbook show chef_base_linux')
+  stdout_str, _status = Open3.capture2('knife cookbook show chef_base_linux')
+  newest_version = Gem::Version.new('0.0.0')
 
-  newestVersion = Gem::Version.new('0.0.0')
-
-  stdout_str.split(' ').each { |e|
+  stdout_str.split(' ').each do |e|
     begin
       v = Gem::Version.new(e)
-      if v > newestVersion
-        newestVersion = v
+      if v > newest_version
+        newest_version = v
       end
     rescue
       puts "#{e} is not a valid version number"
     end
-  }
+  end
 
-  newestVersion
+  newest_version
 end
 
 def local_version
   require 'json'
-  
+
+  sh 'knife cookbook metadata chef_base_linux'
   metadata = JSON.load(File.new('metadata.json'))
-  v = Gem::Version.new(metadata['version'])
+  Gem::Version.new(metadata['version'])
 end
