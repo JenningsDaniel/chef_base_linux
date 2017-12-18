@@ -1,2 +1,6 @@
+AllCops:
+    Exclude:
+        - '**/Berksfile'
+
 Layout/EndOfLine:
     Enabled: false

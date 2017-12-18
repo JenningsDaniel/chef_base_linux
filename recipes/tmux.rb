@@ -11,7 +11,8 @@ template "#{node['chef_base_linux']['home']}/.tmux.conf" do
   group node['chef_base_linux']['group']
   mode  '0664'
   variables(
-    color_scheme_variant: node['chef_base_linux']['tmux']['color_scheme_variant']
+    color_scheme_variant:
+      node['chef_base_linux']['tmux']['color_scheme_variant']
   )
 end
 
