@@ -11,7 +11,6 @@ Applies common linux packages and configuration
 * Installs Tmux plugin manager and plugins
 
 ## TODO
-* Do not call tmux from default
 * Consider adding check in [interval](https://learn.chef.io/modules/manage-a-node-chef-server/rhel/hosted/run-chef-client-periodically#/)
 * Add apt-get update and apt-get upgrade
 

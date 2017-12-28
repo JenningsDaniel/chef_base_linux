@@ -113,5 +113,3 @@ template "#{node['chef_base_linux']['home']}/.vim/after/ftplugin/ruby.vim" do
   group node['chef_base_linux']['group']
   mode  '0664'
 end
-
-include_recipe 'chef_base_linux::tmux'

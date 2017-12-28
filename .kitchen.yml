@@ -21,7 +21,8 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[chef_base_linux::default]
+        - recipe[chef_base_linux::default]
+        - recipe[chef_base_linux::tmux]
     verifier:
       inspec_tests:
         - test/smoke/default
