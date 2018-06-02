@@ -22,7 +22,7 @@ template "#{node['chef_base_linux']['home']}/.vimrc" do
   variables(
     gui_font: node['chef_base_linux']['vim']['gui_font'],
     background: node['chef_base_linux']['vim']['background'],
-    color_scheme: node['chef_base_linux']['vim']['color_scheme']
+    color_scheme: node['chef_base_linux']['vim']['color_scheme'],
     use_pathogen: node['chef_base_linux']['vim']['use_pathogen']
   )
 end

@@ -1,6 +1,6 @@
-<%= if @use_pathogen %>
+<% if @use_pathogen=='true' -%>
 execute pathogen#infect()
-<% end-%>
+<% end -%>
 
 if has('gui_running')
     set background=<%= @background %>
